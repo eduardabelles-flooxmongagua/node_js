@@ -1,11 +1,9 @@
-module.exports= (app)=>{
-    let express = require('express');
-    let routes=express.Router();
-    
-    routes.get('/users', (req, res) => {
-    
+module.exports = (app) => {
+
+    app.get('/users', (req, res) => {
+
         res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json')
+        res.setHeader('Content-Type', 'application/json');
         res.json({
             users:[{
                 name: 'Hcode',
@@ -13,15 +11,17 @@ module.exports= (app)=>{
                 id: 1
             }]
         });
-    
+
     });
-    
-    routes.get('/users/admin',(req, res)=>{
+
+    app.get('/users/admin', (req, res) => {
+
         res.statusCode = 200;
-        res.setHeader('Content-type', 'application/json');
+        res.setHeader('Content-Type', 'application/json');
         res.json({
-         users: []
-        })
-    })
+            users: []
+        });
+
+    });
 
 };
