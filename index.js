@@ -1,7 +1,9 @@
 const express = require('express');
-let routesIndex = require('./routes/index');
-let routesUsers = require('./routes/users');
+const consign = require();
+
 let app = express();
+
+consign().include('routes').into(app);
 
 app.use('/index',routesIndex);
 app.use('/users',routesUsers);
